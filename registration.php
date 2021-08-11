@@ -11,28 +11,13 @@
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
     ini_set("display_errors","1");
     error_reporting(E_ALL);
-    if($_POST['fname'])
-    {
-        echo "fname";
-    }
-    else
-    {
-        echo "nofname";
-    }
-    if($_POST['lname'])
-    {
-        echo "lname";
-    }
-    else
-    {
-        echo "nolname";
-    }
+    
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $email = $_POST['email'];
-    $password = $_POST['[password'];
+    $password = md5($_POST['password']);
     $conn = mysqli_connect('localhost','root','','MUKUL-ADC-CU');
-    $sql = "INSERT INTO 'registration' VALUES ('$fname','$lname','$email','$password')";
+    $sql = "INSERT INTO `registration` (`First_Name`, `Last_Name`, `Email_id`, `password`) VALUES ('$fname', '$lname', '$email', '$password');";
     $result= mysqli_query($conn,$sql);
     if($result)
     {
