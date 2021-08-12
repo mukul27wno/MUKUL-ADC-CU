@@ -21,7 +21,7 @@
     $result= mysqli_query($conn,$sql);
     if($result)
     {
-        header('Location: login.html');
+        header('Location: index.html');
     }
     ?>
 </body>

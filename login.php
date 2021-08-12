@@ -31,7 +31,7 @@
         echo "Ammm You enter wrong email/password try again";
         ?>
       <button >
-        <a type="button" href="login.html">Login</a></button>
+        <a type="button" href="index.html">Login</a></button>
         <?php
     }
     ?>
