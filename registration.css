@@ -1,0 +1,21 @@
+h1{
+ord-spacing: 1.2px;
+color: #000000;
+font-weight: 700;
+text-decoration: none solid rgb(244, 242, 238);
+font-style: italic;
+font-variant: normal;
+text-transform: capitalize;
+color: white;
+margin-top: 50px;
+}
+body
+{
+    background-image: url(bg.jpg); 
+    background-repeat: no-repeat; 
+    height: 630px; 
+    position: relative; 
+    background-size:cover; 
+    color:white;
+    font-size: 150%;
+}

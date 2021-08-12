@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,16 +12,23 @@
     ini_set("display_errors","1");
     error_reporting(E_ALL);
     
-    $fname = $_POST['fname'];
-    $lname = $_POST['lname'];
     $email = $_POST['email'];
     $password = md5($_POST['password']);
     $conn = mysqli_connect('localhost','root','','MUKUL-ADC-CU');
-    $sql = "INSERT INTO `registration` (`First_Name`, `Last_Name`, `Email_id`, `password`) VALUES ('$fname', '$lname', '$email', '$password');";
+    $
+    sql = "SELECT  * FROM `registration` WHERE email = '$email' and password = '$password' ";
     $result= mysqli_query($conn,$sql);
     if($result)
     {
-        header('Location: login.html');
+        header('Location: welcome.html');
+    }
+    else
+    {
+        echo "Ammm You enter wrong email/password try agaian";
+        ?>
+        <button >
+        <a type="button" href="login.html">Login</a></button>
+        <?php
     }
     ?>
 </body>
