@@ -13,20 +13,24 @@
     error_reporting(E_ALL);
     
     $email = $_POST['email'];
-    $password = md5($_POST['password']);
+    $password = $_POST['password'];
     $conn = mysqli_connect('localhost','root','','MUKUL-ADC-CU');
-    $
-    sql = "SELECT  * FROM `registration` WHERE email = '$email' and password = '$password' ";
+    
+    $sql = "SELECT  * FROM `registration` WHERE Email_id = '$email' and password = '$password' ";
+    
     $result= mysqli_query($conn,$sql);
-    if($result)
+    if($result->num_rows>0)
     {
+        while($row = $result->fetch_assoc())
+        {
         header('Location: welcome.html');
+        }
     }
     else
     {
-        echo "Ammm You enter wrong email/password try agaian";
+        echo "Ammm You enter wrong email/password try again";
         ?>
-        <button >
+      <button >
         <a type="button" href="login.html">Login</a></button>
         <?php
     }

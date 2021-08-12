@@ -15,7 +15,7 @@
     $fname = $_POST['fname'];
     $lname = $_POST['lname'];
     $email = $_POST['email'];
-    $password = md5($_POST['password']);
+    $password = $_POST['password'];
     $conn = mysqli_connect('localhost','root','','MUKUL-ADC-CU');
     $sql = "INSERT INTO `registration` (`First_Name`, `Last_Name`, `Email_id`, `password`) VALUES ('$fname', '$lname', '$email', '$password');";
     $result= mysqli_query($conn,$sql);
